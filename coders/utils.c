@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsellier <lsellier@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: emarette <emarette@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/01 05:05:58 by emarette          #+#    #+#             */
-/*   Updated: 2026/03/02 02:59:01 by lsellier         ###   ########.fr       */
+/*   Created: 2026/03/02 07:30:12 by emarette          #+#    #+#             */
+/*   Updated: 2026/03/02 07:30:13 by emarette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

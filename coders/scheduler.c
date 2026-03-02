@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   scheduler.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsellier <lsellier@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: emarette <emarette@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/02 03:48:36 by lsellier          #+#    #+#             */
-/*   Updated: 2026/03/02 03:49:20 by lsellier         ###   ########.fr       */
+/*   Created: 2026/03/02 07:29:45 by emarette          #+#    #+#             */
+/*   Updated: 2026/03/02 07:29:46 by emarette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

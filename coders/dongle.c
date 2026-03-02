@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   dongle.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsellier <lsellier@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: emarette <emarette@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/01 05:24:47 by emarette          #+#    #+#             */
-/*   Updated: 2026/03/02 03:51:07 by lsellier         ###   ########.fr       */
+/*   Created: 2026/03/02 07:28:58 by emarette          #+#    #+#             */
+/*   Updated: 2026/03/02 07:29:01 by emarette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

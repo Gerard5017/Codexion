@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   monitor.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsellier <lsellier@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: emarette <emarette@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/02 01:53:43 by lsellier          #+#    #+#             */
-/*   Updated: 2026/03/02 01:53:43 by lsellier         ###   ########.fr       */
+/*   Created: 2026/03/02 07:29:30 by emarette          #+#    #+#             */
+/*   Updated: 2026/03/02 07:29:31 by emarette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

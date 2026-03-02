@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsellier <lsellier@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: emarette <emarette@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/01 03:00:42 by emarette          #+#    #+#             */
-/*   Updated: 2026/03/02 04:05:56 by lsellier         ###   ########.fr       */
+/*   Created: 2026/03/02 07:29:15 by emarette          #+#    #+#             */
+/*   Updated: 2026/03/02 07:29:16 by emarette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
