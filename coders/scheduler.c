@@ -32,10 +32,8 @@ void	register_request(t_coder *coder, t_dongle *dongle)
 		return ;
 	coder->requested_dongle = dongle;
 	coder->request_seq = ++(*get_request_seq());
-	pthread_mutex_lock(&coder->monitor->mutex);
 	coder->request_deadline = coder->last_compile
 		+ coder->codexion.time_to_burnout;
-	pthread_mutex_unlock(&coder->monitor->mutex);
 }
 
 int	is_better_candidate(t_coder *current, t_coder *best)

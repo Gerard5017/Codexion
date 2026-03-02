@@ -22,13 +22,14 @@ int	get_arg(long *l, char *arg)
 	return (0);
 }
 
-void	init_dongle(t_dongle *dongle, t_codexion *codexion)
+int	init_dongle(t_dongle *dongle, t_codexion *codexion)
 {
 	dongle->available = 1;
 	dongle->dongle_cooldown = codexion->dongle_cooldown;
 	dongle->release_time = 0;
 	if (pthread_mutex_init(&dongle->mutex, NULL))
-		return ;
+		return (1);
+	return (0);
 }
 
 int	init_arg(t_codexion *codexion, int ac, char **av)
@@ -60,9 +61,10 @@ int	init_arg(t_codexion *codexion, int ac, char **av)
 	return (0);
 }
 
-void	init_coder(t_coder *coder, t_codexion *codexion, unsigned int id)
+int	init_coder(t_coder *coder, t_codexion *codexion, unsigned int id)
 {
-	init_dongle(&coder->dongle_right, codexion);
+	if (init_dongle(&coder->dongle_right, codexion))
+		return (1);
 	coder->dongle_left = NULL;
 	coder->id = id;
 	coder->start_time = 0;
@@ -72,4 +74,5 @@ void	init_coder(t_coder *coder, t_codexion *codexion, unsigned int id)
 	coder->requested_dongle = NULL;
 	coder->request_seq = 0;
 	coder->request_deadline = LONG_MAX;
+	return (0);
 }

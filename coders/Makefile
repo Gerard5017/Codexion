@@ -1,8 +1,7 @@
 NAME = codexion
 
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -g -pthread -fsanitize=thread
-AR = ar rcs
+CFLAGS = -Wall -Werror -Wextra -g -pthread 
 
 # Directory
 OBJ_DIR = .obj

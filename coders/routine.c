@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   routine.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsellier <lsellier@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: emarette <emarette@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 04:52:08 by emarette          #+#    #+#             */
-/*   Updated: 2026/03/02 04:13:49 by lsellier         ###   ########.fr       */
+/*   Updated: 2026/03/02 07:24:21 by emarette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ void	refactor(t_coder *coder)
 	}
 }
 
-void	compile(t_coder *coder)
+void	do_compile(t_coder *coder, t_dongle *first, t_dongle *second)
 {
-	if (take_dongle(coder, &coder->dongle_right))
+	if (take_dongle(coder, first))
 	{
-		if (take_dongle(coder, coder->dongle_left))
+		if (take_dongle(coder, second))
 		{
 			if (!is_end(coder))
 			{
@@ -42,10 +42,28 @@ void	compile(t_coder *coder)
 				pthread_mutex_unlock(&coder->monitor->mutex);
 				coder_wait(coder, coder->codexion.time_to_compile);
 			}
-			dongle_toggle_available(coder->dongle_left);
+			dongle_toggle_available(second);
 		}
-		dongle_toggle_available(&coder->dongle_right);
+		dongle_toggle_available(first);
 	}
+}
+
+void	compile(t_coder *coder)
+{
+	t_dongle	*first;
+	t_dongle	*second;
+
+	if (coder->id == (unsigned int)coder->codexion.coders_count)
+	{
+		first = coder->dongle_left;
+		second = &coder->dongle_right;
+	}
+	else
+	{
+		first = &coder->dongle_right;
+		second = coder->dongle_left;
+	}
+	do_compile(coder, first, second);
 }
 
 void	debug(t_coder *coder)

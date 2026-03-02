@@ -17,13 +17,16 @@ int	is_end(t_coder *coder)
 	t_monitor	*monitor;
 	int			is_burnout;
 	int			is_ended;
+	long		burnout_ts;
 
 	monitor = coder->monitor;
 	is_burnout = 0;
+	burnout_ts = 0;
 	pthread_mutex_lock(&monitor->mutex);
 	if (!coder->end && !monitor->end && get_time_to_burnout(coder) <= 0)
 	{
 		is_burnout = 1;
+		burnout_ts = get_timestamp(coder);
 		monitor->end = 1;
 	}
 	if (monitor->end)
@@ -31,7 +34,7 @@ int	is_end(t_coder *coder)
 	is_ended = coder->end;
 	pthread_mutex_unlock(&monitor->mutex);
 	if (is_burnout)
-		print_state(coder, BURNOUT_MSG);
+		print_state_ts(coder, BURNOUT_MSG, burnout_ts);
 	return (is_ended);
 }
 
@@ -48,15 +51,18 @@ void	coder_wait(t_coder *coder, long wait_time)
 		usleep(wait_time * 1000);
 }
 
-void	print_state(t_coder *coder, char *str)
+void	print_state_ts(t_coder *coder, char *str, long timestamp)
 {
 	static pthread_mutex_t	mutex = PTHREAD_MUTEX_INITIALIZER;
-	long					timestamp;
 
-	timestamp = get_timestamp(coder);
 	pthread_mutex_lock(&mutex);
 	printf("%ld %u %s\n", timestamp, coder->id, str);
 	pthread_mutex_unlock(&mutex);
+}
+
+void	print_state(t_coder *coder, char *str)
+{
+	print_state_ts(coder, str, get_timestamp(coder));
 }
 
 int	ft_strcmp(const char *s1, const char *s2)

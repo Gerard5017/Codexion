@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   codexion.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsellier <lsellier@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: emarette <emarette@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 22:19:31 by emarette          #+#    #+#             */
-/*   Updated: 2026/03/02 04:06:43 by lsellier         ###   ########.fr       */
+/*   Updated: 2026/03/02 06:09:58 by emarette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include <string.h>
 # include <sys/time.h>
 # include <unistd.h>
-# define MAX_CODERS 10000
+# define MAX_CODERS 1000
 
 # define COMPILE_MSG "is compiling"
 # define REFACTOR_MSG "is refactoring"
@@ -77,7 +77,8 @@ long				ft_strtol(const char *str, char **endptr);
 
 int					init_arg(t_codexion *coder, int ac, char **av);
 
-void				init_coder(t_coder *coder, t_codexion *codexion,
+int					init_dongle(t_dongle *dongle, t_codexion *codexion);
+int					init_coder(t_coder *coder, t_codexion *codexion,
 						unsigned int id);
 long				get_time_to_burnout(t_coder *coder);
 long				get_timestamp(t_coder *coder);
@@ -87,6 +88,7 @@ void				*routine(void *ptr);
 int					is_end(t_coder *coder);
 void				coder_wait(t_coder *coder, long wait_time);
 void				print_state(t_coder *coder, char *str);
+void				print_state_ts(t_coder *coder, char *str, long timestamp);
 void				dongle_toggle_available(t_dongle *dongle);
 int					ft_strcmp(const char *s1, const char *s2);
 int					run_simulation(t_codexion *codexion);
