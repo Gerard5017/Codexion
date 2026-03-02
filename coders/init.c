@@ -6,7 +6,7 @@
 /*   By: emarette <emarette@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 07:29:15 by emarette          #+#    #+#             */
-/*   Updated: 2026/03/02 07:29:16 by emarette         ###   ########.fr       */
+/*   Updated: 2026/03/02 07:50:56 by emarette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,7 @@ int	init_arg(t_codexion *codexion, int ac, char **av)
 	if (ac != 8)
 		return (1);
 	memset(codexion, 0, sizeof(t_codexion));
-	if (get_arg(&codexion->coders_count, av[0])
-		|| codexion->coders_count > MAX_CODERS)
+	if (get_arg(&codexion->coders_count, av[0]))
 		return (1);
 	if (get_arg(&codexion->time_to_burnout, av[1]))
 		return (1);

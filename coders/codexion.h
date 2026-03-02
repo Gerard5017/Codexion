@@ -6,7 +6,7 @@
 /*   By: emarette <emarette@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 22:19:31 by emarette          #+#    #+#             */
-/*   Updated: 2026/03/02 06:09:58 by emarette         ###   ########.fr       */
+/*   Updated: 2026/03/02 07:50:44 by emarette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 # include <string.h>
 # include <sys/time.h>
 # include <unistd.h>
-# define MAX_CODERS 1000
 
 # define COMPILE_MSG "is compiling"
 # define REFACTOR_MSG "is refactoring"
@@ -88,7 +87,6 @@ void				*routine(void *ptr);
 int					is_end(t_coder *coder);
 void				coder_wait(t_coder *coder, long wait_time);
 void				print_state(t_coder *coder, char *str);
-void				print_state_ts(t_coder *coder, char *str, long timestamp);
 void				dongle_toggle_available(t_dongle *dongle);
 int					ft_strcmp(const char *s1, const char *s2);
 int					run_simulation(t_codexion *codexion);

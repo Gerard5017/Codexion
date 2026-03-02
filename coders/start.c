@@ -6,7 +6,7 @@
 /*   By: emarette <emarette@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 07:29:52 by emarette          #+#    #+#             */
-/*   Updated: 2026/03/02 07:29:53 by emarette         ###   ########.fr       */
+/*   Updated: 2026/03/02 07:39:30 by emarette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,5 @@ int	run_simulation(t_codexion *codexion)
 		pthread_create(&threads[i], NULL, &routine, &coders[i]);
 	join_and_cleanup(codexion, coders, threads, monitor_thread);
 	pthread_mutex_destroy(&mon.mutex);
-	free(coders);
-	free(threads);
-	return (0);
+	return (free(coders), free(threads), 0);
 }
